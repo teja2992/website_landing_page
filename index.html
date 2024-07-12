@@ -1,33 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>W3.CSS Template</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-.w3-sidebar a {font-family: "Roboto", sans-serif}
-body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global L&D Landing Page</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      font-family: "Roboto", sans-serif;
+    }
+    .w3-sidebar {
+      width: 0;
+      z-index: 3;
+      top: 0;
+      left: 0;
+      background-color: white;
+      overflow-x: hidden;
+      padding: 16px;
+      transition: 0.5s ease-in-out;
+    }
+    .w3-sidebar a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 16px;
+      color: #000;
+      display: block;
+      transition: 0.3s ease;
+    }
+    .w3-sidebar a:hover {
+      color: #f1f1f1;
+    }
+    .w3-sidebar .w3-bar-item {
+      border-bottom: 1px solid #ddd;
+    }
+    .w3-sidebar a.active {
+      background-color: #4CAF50;
+      color: white;
+    }
+    .w3-main {
+      transition: margin-left 0.5s;
+      padding: 20px;
+    }
+    @media only screen and (max-width: 768px) {
+      .w3-sidebar {
+        width: 250px;
+      }
+      .w3-main {
+        margin-left: 250px;
+      }
+    }
+  </style>
 </head>
-<body class="w3-content" style="max-width:1200px">
+<body>
 
 <!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
+<nav class="w3-sidebar" id="mySidebar">
   <div class="w3-container w3-display-container w3-padding-16">
-    <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
-    <h3 class="w3-wide"><b>GLobal L&D</b></h3>
+    <h3 class="w3-wide"><b>Global L&D</b></h3>
   </div>
-  <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
+  <div class="w3-padding-64 w3-large w3-text-grey">
     <a href="#" class="w3-bar-item w3-button">Home</a>
     <a href="#" class="w3-bar-item w3-button">Contact</a>
-    <a onclick="myAccFunc()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn">
+    <a href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" onclick="myAccFunc()">
       Courses <i class="fa fa-caret-down"></i>
     </a>
-    <div id="demoAcc" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+    <div id="demoAcc" class="w3-bar-block w3-padding-large w3-medium">
       <a href="#" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-caret-right w3-margin-right"></i>Seller</a>
       <a href="#" class="w3-bar-item w3-button">Manager</a>
       <a href="#" class="w3-bar-item w3-button">ISG</a>
@@ -35,121 +75,85 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
     </div>
     <a href="#" class="w3-bar-item w3-button">Our Team</a>
     <a href="#" class="w3-bar-item w3-button">About</a>
-
+    <a href="#footer" class="w3-bar-item w3-button w3-padding">Subscribe</a>
   </div>
-  
-  <a href="#footer"  class="w3-bar-item w3-button w3-padding">Subscribe</a>
 </nav>
 
-<!-- Top menu on small screens -->
-<header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
-  <div class="w3-bar-item w3-padding-24 w3-wide">GLobal L&D</div>
-  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></a>
-</header>
+<!-- Page content -->
+<div class="w3-main" id="main">
 
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
-<!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:250px">
-
-  <!-- Push down content on small screens -->
-  <div class="w3-hide-large" style="margin-top:83px"></div>
-  
   <!-- Top header -->
+  <header class="w3-bar w3-top w3-black w3-xlarge">
+    <div class="w3-bar-item w3-padding-24 w3-wide">Global L&D</div>
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" onclick="toggleSidebar()"><i class="fa fa-bars"></i></a>
+  </header>
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="w3-overlay w3-hide-large" onclick="toggleSidebar()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+  <!-- Content sections -->
   <header class="w3-container w3-xlarge">
     <p class="w3-left">Welcome!</p>
     <p class="w3-right">
-     
       <i class="fa fa-search"></i>
     </p>
   </header>
 
   <!-- Image header -->
   <div class="w3-display-container w3-container">
-    <img src="https://lenovobeijing.sharepoint.com/:i:/r/sites/GlobalSalesLnD-InternalTeam/Shared%20Documents/Internal%20Team/Brand%20Assets/email%20banner%207.25inches%20Oct%2020.png?csf=1&web=1&e=xGvAUu" alt="Jeans" style="width:100%">
+    <img src="https://lenovobeijing.sharepoint.com/:i:/r/sites/GlobalSalesLnD-InternalTeam/Shared%20Documents/Internal%20Team/Brand%20Assets/email%20banner%207.25inches%20Oct%2020.png?csf=1&web=1&e=xGvAUu" alt="Banner" style="width:100%">
     <div class="w3-display-topleft w3-text-white" style="padding:24px 48px">
- 
-      
       <p><a href="#" class="w3-button w3-black w3-padding-large w3-large">Explore Now</a></p>
     </div>
   </div>
-
-  <div class="w3-container w3-text-grey" id="jeans">
-   <p>Click on any of the courses </p>
-  </div>
-<!--
-  <!-- Product grid 
-  <div class="w3-row w3-grayscale">
-    <div class="w3-col l3 s6">
-      <div class="w3-container">
-        <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/training-1928279-1633151.png?f=webp&w=256" style="width:30%">
-        <p><b>Classroom Trainings<br></b></p>
-      </div>
-     
-    </div>
-
-    <div class="w3-col l3 s6">
-      <div class="w3-container">
-        <div class="w3-display-container">
-          <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/training-2021954-1705374.png?f=webp&w=256" style="width:30%">
-      
-        <p><b>Virtual Trainings <b></b></p>
-     
-      
-       <div class="w3-container">
-        <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/elearning-2802545-2322809.png?f=webp&w=256" style="width:30%">
-        <p><b>eLearnings<br></b></p>
-      </div> 
-      
-       </div>
-      
-    </div>
-</div>
-   -->
-   
- <!-- Product grid -->
-<div class="w3-row w3-grayscale">
-  <div class="w3-col l4 s6">
-    <div class="w3-container">
-      <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/training-1928279-1633151.png?f=webp&w=256" style="width:10%">
-      <p><b>Classroom Trainings</b></p>
-    </div>
-  </div>
-
-  <div class="w3-col l4 s6">
-    <div class="w3-container">
-      <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/training-2021954-1705374.png?f=webp&w=256" style="width:10%">
-      <p><b>Virtual Trainings</b></p>
-    </div>
-  </div>
-
-  <div class="w3-col l4 s6">
-    <div class="w3-container">
-      <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/elearning-2802545-2322809.png?f=webp&w=256" style="width:10%">
-      <p><b>eLearnings</b></p>
-    </div>
-  </div>
-</div>
-
-
-
   
-   
-      
+  <div class="w3-container w3-text-grey" id="jeans">
+    <p>Click on any of the below</p>
+  </div>
+
+  <!-- Product grid -->
+  <div class="w3-row">
+    <div class="w3-col l3 s12 m6">
+      <div class="w3-container product-box" style="background-color: #57e0c1; border: 1px solid #ddd; padding: 10px; margin: 10px; text-align: center;">
+        <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/training-1928279-1633151.png?f=webp&w=256" style="width:30%; display: block; margin-bottom: 10px;">
+        <p><b>Classroom Trainings</b></p>
+      </div>
     </div>
+    <div class="w3-col l3 s12 m6">
+      <div class="w3-container product-box" style="background-color: #e7fdc1; border: 1px solid #ddd; padding: 10px; margin: 10px; text-align: center;">
+        <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/training-2021954-1705374.png?f=webp&w=256" style="width:30%; display: block; margin-bottom: 10px;">
+        <p><b>Virtual Trainings</b></p>
+      </div>
+    </div>
+    <div class="w3-col l3 s12 m6">
+      <div class="w3-container product-box" style="background-color: #fce0c1; border: 1px solid #ddd; padding: 10px; margin: 10px; text-align: center;">
+        <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/elearning-2802545-2322809.png?f=webp&w=256" style="width:30%; display: block; margin-bottom: 10px;">
+        <p><b>eLearnings</b></p>
+      </div>
+    </div>
+    <div class="w3-col l3 s12 m6">
+      <div class="w3-container product-box" style="background-color: #57e0d5; border: 1px solid #ddd; padding: 10px; margin: 10px; text-align: center;">
+        <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/learning-path-10389795-8509827.png?f=webp&w=256" style="width:30%; display: block; margin-bottom: 10px;">
+        <p><b>My Learning Paths</b></p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="w3-container w3-text-grey" id="jeans">
+    <p></p>
+    <p></p>
   </div>
 
   <!-- Subscribe section -->
-  <div class="w3-container w3-black w3-padding-32">
+  <div class="w3-container w3-black w3-padding-24">
     <h1>Subscribe</h1>
     <p>To get notifications:</p>
     <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail" style="width:100%"></p>
     <button type="button" class="w3-button w3-red w3-margin-bottom">Subscribe</button>
-  </div>
-  
+  </div> 
+
   <!-- Footer -->
-  <footer class="w3-padding-64 w3-light-grey w3-small w3-center" id="footer">
+  <footer class="w3-padding-64 w3-light-grey w3-small w3-center">
     <div class="w3-row-padding">
       <div class="w3-col s4">
         <h4>Contact</h4>
@@ -158,69 +162,51 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
           <p><input class="w3-input w3-border" type="text" placeholder="Name" name="Name" required></p>
           <p><input class="w3-input w3-border" type="text" placeholder="Email" name="Email" required></p>
           <p><input class="w3-input w3-border" type="text" placeholder="Subject" name="Subject" required></p>
-          <p><input class="w3-input w3-border" type="text" placeholder="Message" name="Message" required></p>
           <button type="submit" class="w3-button w3-block w3-black">Send</button>
         </form>
       </div>
 
       <div class="w3-col s4">
         <h4>About</h4>
-        <p><a href="#">About us</a></p>
-
-        <p><a href="#">Help</a></p>
+        <p><a href="#">Company</a></p>
+        <p><a href="#">Team</a></p>
+        <p><a href="#">Careers</a></p>
+        <p><a href="#">Privacy Policy</a></p>
       </div>
 
-      
+      <div class="w3-col s4 w3-justify">
+        <h4>Other Links</h4>
+        <p><a href="#">Terms</a></p>
+        <p><a href="#">Contact Us</a></p>
+        <p><a href="#">FAQ</a></p>
+        <p><a href="#">Sitemap</a></p>
+      </div>
     </div>
   </footer>
-  
-  
-  
 
-<!--
-  <div class="w3-black w3-center w3-padding-24">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></div>
-
-   End page content -->
 </div>
 
-<!-- Newsletter Modal 
-<div id="newsletter" class="w3-modal">
-  <div class="w3-modal-content w3-animate-zoom" style="padding:32px">
-    <div class="w3-container w3-white w3-center">
-      <i onclick="document.getElementById('newsletter').style.display='none'" class="fa fa-remove w3-right w3-button w3-transparent w3-xxlarge"></i>
-      <h2 class="w3-wide">NEWSLETTER</h2>
-      <p>Join our mailing list to receive updates on new arrivals and special offers.</p>
-      <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail"></p>
-      <button type="button" class="w3-button w3-padding-large w3-red w3-margin-bottom" onclick="document.getElementById('newsletter').style.display='none'">Subscribe</button>
-    </div>
-  </div>
-</div> -->
-
 <script>
-// Accordion 
-function myAccFunc() {
-  var x = document.getElementById("demoAcc");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else {
-    x.className = x.className.replace(" w3-show", "");
+  function toggleSidebar() {
+    var sidebar = document.getElementById("mySidebar");
+    var overlay = document.getElementById("myOverlay");
+    if (sidebar.style.width === "250px") {
+      sidebar.style.width = "0";
+      overlay.style.display = "none";
+    } else {
+      sidebar.style.width = "250px";
+      overlay.style.display = "block";
+    }
   }
-}
 
-// Click on the "Jeans" link on page load to open the accordion for demo purposes
-document.getElementById("myBtn").click();
-
-
-// Open and close sidebar
-function w3_open() {
-  document.getElementById("mySidebar").style.display = "block";
-  document.getElementById("myOverlay").style.display = "block";
-}
- 
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-  document.getElementById("myOverlay").style.display = "none";
-}
+  function myAccFunc() {
+    var x = document.getElementById("demoAcc");
+    if (x.className.indexOf("w3-show") == -1) {
+      x.className += " w3-show";
+    } else {
+      x.className = x.className.replace(" w3-show", "");
+    }
+  }
 </script>
 
 </body>
